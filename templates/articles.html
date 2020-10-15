@@ -1,0 +1,28 @@
+{% include "layout.html" %}
+
+{% block slider %}
+<div class="container">
+<h3> Meqaleler</h3>
+<hr>
+{% if articles %}
+<form action="/search" method = "post">
+    <input  type="text" name="keyword" class="input-sm" placeholder="Axtar">
+    <button type="submit" class="btn btn-danger">Axtar</button>
+</form>
+<ul class="list-group">
+
+ {% for article in articles  %}
+
+     <li class="list-group-item "><a href="article/{{article.id}}">{{article.title}}</a></li>
+ 
+ {% endfor %}
+ 
+</ul>
+
+
+{% else %}
+    <div class = " alert alert-danger"> Meqale yoxdur</div> 
+{% endif %}
+</div>
+
+{% endblock  %}

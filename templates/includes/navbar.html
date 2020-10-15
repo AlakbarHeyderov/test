@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="/">Udemy</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+     
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Ana sehife</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/about">Haqqimizda</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/articles">Meqale</a>
+        </li>
+        {% if session["logged_in"]  %}
+        <li class="nav-item active">
+          <a class="nav-link" href="/addarticel">Meqale elave et</a>
+        </li>
+      {% else %}
+      {% endif %}
+        
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      {% if session["logged_in"] %}
+        <li class="nav-item active">
+          <a class="nav-link" href="/dashboard">Istifadeci panel</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/logout">Cixis</a>
+        </li>
+      {% else %}
+        <li class="nav-item active">
+          <a class="nav-link" href="/login">Daxil ol</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/register">Qeydiyyat</a>
+        </li>
+      {% endif %}
+      
+        
+         
+      </ul>
+    </div>
+  </nav>

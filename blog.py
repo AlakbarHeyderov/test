@@ -3,8 +3,7 @@ from flask_mysqldb import MySQL
 from wtforms import Form, StringField,TextAreaField,PasswordField,validators
 from passlib.hash import sha256_crypt
 from functools import wraps
-
-
+    
 # Istifadeci qeydiyyati
 class RegisterForm(Form):
     name = StringField("Ad Soyad",validators=[validators.Length(min = 4, max = 25)])
@@ -77,7 +76,7 @@ def login():
 @app.route("/about")
 def about():
     return render_template("about.html")
-
+  
 @app.route("/articles")
 def articles():
     cursor = mysql.connection.cursor()
